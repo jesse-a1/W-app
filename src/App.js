@@ -1,27 +1,18 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-
 function App() {
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
-
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
-
-  
   const searchLocation = async (event) => {
-    if (event.key === 'Enter') {
-      try{
-      
+    if (event.key === 'Enter') {try{
         const response = await axios.get(url)
         setData(response.data)
-        console.log(response.data)
-      
+        console.log(response.data) 
       } 
       catch 
       {
-      
         window.location.reload()
-      
       } 
       finally 
       {
@@ -32,9 +23,6 @@ function App() {
     }
   }
   return (
-
-    //user types in possible location, api searches based on coordinates
-    //displays temperature and "What feels like" temperature
     <div className="app">
       <div className="search">
         <input
