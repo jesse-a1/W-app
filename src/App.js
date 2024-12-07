@@ -14,12 +14,8 @@ function App() {
       {
         window.location.reload()
       } 
-      finally 
-      {
-      
-        setLocation('')
-      
-      }
+      finally {
+        setLocation('')}
     }
   }
   return (
@@ -36,14 +32,36 @@ function App() {
         <div className="top">
           <div className="location">
             <p>{data.name}</p>
+
           </div>
+
           <div className="temp">
             {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null}
           </div>
+
           <div className="description">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
+
         </div>
+        {data.name !== undefined &&
+          <div className="bottom">
+            <div className="humidity">
+            <p>Humidity</p>
+              {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
+              
+            </div>
+            <div className="wind">
+            <p>Wind Speed</p>
+              {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} MPH</p> : null}
+             
+            </div>
+            
+          </div>
+        }
+
+
+
       </div>
     </div>
   );
