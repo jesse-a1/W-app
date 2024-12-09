@@ -18,6 +18,12 @@
   display:grid;
 }
 
+
+.background-image {
+  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
+  background-size: cover; 
+}
+
 :root{
 
 
@@ -45,11 +51,13 @@
   background-color: violet;
 }
 
-
+.background-image {
+  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
+  background-size: cover; 
+}
   
 
 .App-link {
   background-color: black;
   color: #ffffff;
 }
-

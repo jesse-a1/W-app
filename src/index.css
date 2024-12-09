@@ -5,13 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #6cc9ff
 }
 :root{
+  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
+  background-size: cover;  
 
 
 .app{
-  background-color: #6cc9ff;
+  background-size: cover;  
   text-align: center;
   font-size: calc(10px + 10px);
   font-weight: 700;
@@ -21,25 +22,28 @@ body {
 }
 .app input{
   width: 40%;
-  border-radius: 10px;
-  background: white;
+  border-radius: 1px;
+  border-width: 5px;
+  
+ 
+}
+.background-image {
+  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
+  background-size: cover; 
 }
 
 .theme-option{
+  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
   height: 25px;
   width: 25px;
   border: 1px solid;
   border-radius: 50%;
   cursor: pointer;
 }
-#theme-light{
-  background-color: white;
-  border-color: black;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
 }
-
-

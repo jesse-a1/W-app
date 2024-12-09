@@ -7,7 +7,7 @@ function App() {
   const [coordinates, setCoordinates] = useState(null);
   const [displayName, setDisplayName] = useState(''); // State to store the English local name.
 
-  const API_KEY = '3415abd977a2c51135cd78c628bf0331'; // Replace with your own API key.
+  const API_KEY = '3415abd977a2c51135cd78c628bf0331'; // API key for access to 2.5 and 3.0 features.
 
   // Fetch coordinates for the location entered
   const fetchCoordinates = async (event) => {
