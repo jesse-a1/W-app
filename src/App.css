@@ -1,63 +1,211 @@
+/* Reset Default Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main App Container with Fade Effect */
 .App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg') 
+              no-repeat center center/cover; 
+  font-family: Arial, sans-serif;
   text-align: center;
+  color: white;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.App-footer {
-  background-color: blueviolet;
-  display:grid;
+/* Center All Content */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
 }
 
-
-.background-image {
-  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
-  background-size: cover; 
-}
-
-:root{
-
-
+/* App Title */
 .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Search Bar */
+.search {
+  width: 400px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
   color: white;
-  background-color: violet;
-}
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  border-radius: 15px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
-[data-theme="dark"]
-{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search input:focus {
+  border-color: #10c3ff;
+  box-shadow: 0 0 15px rgba(0, 42, 255, 0.8);
+}
+
+/* Suggestions List */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   color: white;
-  background-color: violet;
+  text-align: left;
+  z-index: 10;
 }
 
-.background-image {
-  background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg');
-  background-size: cover; 
+.suggestions li {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s ease-in-out;
 }
-  
 
-.App-link {
-  background-color: black;
-  color: #ffffff;
+.suggestions li:last-child {
+  border-bottom: none;
+}
+
+.suggestions li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Weather Data Display */
+.container {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6); 
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  width: 100%;
+}
+
+.top {
+  margin-bottom: 20px;
+}
+
+.top p, .top h1 {
+  margin: 5px 0;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.bottom div {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+h1, p {
+  margin: 0;
+}
+
+/* New Forecast Section */
+.forecast-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-container h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.forecast-card {
+  background: rgba(0, 0, 0, 0.6); 
+  padding: 5px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.forecast-card .day {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.forecast-card .condition {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.forecast-card .temp-range {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffea00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .forecast-card {
+    padding: 10px;
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 }
